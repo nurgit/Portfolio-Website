@@ -15,7 +15,14 @@ class CreateMainsTable extends Migration
     {
         Schema::create('mains', function (Blueprint $table) {
             $table->id();
+
+            $table->string('title');
+            $table->string('sub_title');
+            $table->string('bc_img');
+            $table->string('resume');
+
             $table->timestamps();
+            
         });
     }
 
