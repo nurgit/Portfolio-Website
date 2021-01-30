@@ -1,0 +1,4 @@
+
+
+ #6--Model and Migration 
+ $php artisan make:model Main -m
