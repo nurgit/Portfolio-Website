@@ -1,4 +1,12 @@
 
 
  #6--Model and Migration 
- $php artisan make:model Main -m
+    $php artisan make:model Main -m// m=Migration
+    $php artisan migrate
+
+ #6-- storage link 
+    $php artisan storage:link
+
+ #6-- Controller with Resorece
+    $ php artisan make:controller AdminMainPagesController --resource
+
