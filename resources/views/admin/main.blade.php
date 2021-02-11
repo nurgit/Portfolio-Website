@@ -18,7 +18,7 @@
                         <div class="from-group col-md-3 mt-3">
                             <h3>Backgtound Image</h3>
                             <img style="height: 30vh" src="{{url($main->bc_img)}}" alt="" class="img-thumbnil">
-                            <input type="file" id="bc_img" class="bc_img mt-3">
+                            <input type="file" id="bc_img" name="bc_img" class="bc_img mt-3">
                         </div>
                         <div style="margin-left: 5%" class="form-group col-md-4 mt-3">
                             <div>

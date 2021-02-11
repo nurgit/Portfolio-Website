@@ -82,6 +82,7 @@
 
 <div id="layoutSidenav_content"> 
     
+    @include('alert.messages')
         @yield('content')
 
 

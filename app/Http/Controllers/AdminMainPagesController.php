@@ -14,51 +14,8 @@ class AdminMainPagesController extends Controller
      */
     public function index()
     {
-        $main=main::first();
+        $main=Main::first();
         return view('admin.main', compact('main'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -70,17 +27,32 @@ class AdminMainPagesController extends Controller
      */
     public function update(Request $request)
     {
-        return 'abc';
+        $this->validate($request,[
+            'title'=>'required|string',
+            'sub_title'=>'required|string',
+        ]);
+
+        $main=Main::first();
+        $main->title= $request->title;
+        $main->sub_title= $request->sub_title;
+        
+        if($request->file('bc_img')){
+            $img_file= $request->file('bc_img');
+            $img_file->storeAs('public/img/','bc_img.'.$img_file->getClientOringinalExtnsion());
+            $main->bc_img='stronge/img/bc_img.' .$img_file->getClientOringlnaExtnsion();
+        }
+
+        if($request->file('reaue')){
+            $pdf_file= $request->file('reaue');
+            $pdf_file->storeAs('public/pdf/','reaue.'.$pdf_file->getClientOringinalExtnsion());
+            $main->reaue='stronge/img/reaue.' .$pdf_file->getClientOringlnaExtnsion();
+        }
+        $main->save();
+        return redirect()->route('admin.main')->with('success', "main page data hasbeen Updated Successfully");
+        
+ 
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }
