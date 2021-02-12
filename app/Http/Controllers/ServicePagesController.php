@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Service;
 
 class ServicePagesController extends Controller
 {
@@ -34,7 +35,18 @@ class ServicePagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'icone'=>'required|string',
+            'title'=>'required|string',
+            'description'=>'required|string',
+        ]);
+
+        $service= new Service;
+        $service->icone= $request->icone;
+        $service->title= $request->title;
+        $service->description=$request->description;
+        $service->save();
+        return redirect()->route('admin.services.create')->with('success','new Service Created');
     }
 
     /**

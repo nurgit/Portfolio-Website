@@ -32,7 +32,8 @@ Route::get('/admin/main','AdminMainPagesController@index')->name('admin.main');
 Route::put('/admin/main','AdminMainPagesController@update')->name('admin.main.update');
 
 //ServicePagesController
-Route::get('/admin/service/create','ServicePagesController@create')->name('admin.service.create');
+Route::get('/admin/services/create','ServicePagesController@create')->name('admin.services.create');
+Route::post('/admin/services/create','ServicePagesController@store')->name('admin.services.store');
 
  Auth::routes();
 
