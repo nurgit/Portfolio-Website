@@ -40,7 +40,7 @@ Route::prefix('admin')->group(function(){
     
     //PortfolioPagesController
     Route::get('/portfolios/create','PortfolioPagesController@create')->name('admin.portfolios.create');
-    Route::post('/portfolios/create','PortfolioPagesController@store')->name('admin.portfolios.store');
+    Route::put('/portfolios/create','PortfolioPagesController@store')->name('admin.portfolios.store');
     Route::get('/portfolios/list','PortfolioPagesController@list')->name('admin.portfolios.list');
     Route::get('/portfolios/edit/{id}','PortfolioPagesController@edit')->name('admin.portfolios.edit');
     Route::post('/portfolios/update/{id}','PortfolioPagesController@update')->name('admin.portfolios.update');

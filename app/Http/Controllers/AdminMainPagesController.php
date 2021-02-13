@@ -48,7 +48,7 @@ class AdminMainPagesController extends Controller
             $main->reaue='stronge/img/reaue.' .$pdf_file->getClientOringlnaExtnsion();
         }
         $main->save();
-        return redirect()->route('admin.main')->with('success', "main page data hasbeen Updated Successfully");
+        return redirect()->route('admin.portfolios.create')->with('success', "main page data hasbeen Updated Successfully");
         
  
         
