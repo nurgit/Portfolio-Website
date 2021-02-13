@@ -16,6 +16,7 @@
                         <th scope="col">Icone</th>
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -25,7 +26,19 @@
                                     <th scope="row">{{$service->id}}</th>
                                     <td>{{$service->icone}}</td>
                                     <td>{{$service->title}}</td>
-                                    <td>{{$service->description}}</td>
+                                    <td>{{Str::limit(strip_tags($service->description),40)}}</td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <a href="{{route('admin.services.edit',$service->id)}}" class="btn btn-primary">Edit</a>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                {{-- <form action="{{route('admin.services.delete',$service->id)}}">
+                                                    <input type="submet" name="submit" value="Delete" class="btn btn-danger">
+                                                </form> --}}
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>    
                             @endforeach
                         @endif

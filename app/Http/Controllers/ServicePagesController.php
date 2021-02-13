@@ -69,7 +69,8 @@ class ServicePagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $services=Service::find($id);
+        return view('admin.services.edit', compact('services'));
     }
 
     /**
@@ -81,8 +82,21 @@ class ServicePagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request,[
+            'icone'=>'required|string',
+            'title'=>'required|string',
+            'description'=>'required|string',
+        ]);
+
+        $service=Service::find($id);
+        $service->icone= $request->icone;
+        $service->title= $request->title;
+        $service->description=$request->description;
+        $service->save();
+        return redirect()->route('admin.services.list')->with('success','service Update successfully');
     }
+    
 
     /**
      * Remove the specified resource from storage.
