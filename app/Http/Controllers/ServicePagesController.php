@@ -106,6 +106,8 @@ class ServicePagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $services=Service::find($id);
+        $services->delete();
+        return redirect()->route('admin.services.list')->with('success',' service Deleted successfully');
     }
 }
