@@ -9,7 +9,7 @@ class PagesController extends Controller
     //
     public function index(){
         $main=Main::first();
-        return view('pages.index', compact('main'));
+        return view('pages.index',compact('main'));
     }
 
     // public function dashbord(){
