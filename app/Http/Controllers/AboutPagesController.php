@@ -56,7 +56,7 @@ class AboutPagesController extends Controller
         $abouts->image="storage/img/".$file->hashName();
 
         $abouts->save();
-        return redirect()->route('admin.abouts.create')->with('success','new About Created');
+        return redirect()->route('admin.abouts.list')->with('success','new About Created');
     }
 
     /**
