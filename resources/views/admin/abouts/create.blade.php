@@ -6,7 +6,7 @@
                 <h1 class="mt-4">Create</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="{{route('admin.dashbord')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Portfolios-Create</li>
+                    <li class="breadcrumb-item active">About-Create</li>
                 </ol>
                 
                 

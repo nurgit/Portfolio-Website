@@ -93,38 +93,26 @@ class AboutPagesController extends Controller
     {
 
         $this->validate($request,[
-            'title'=>'required|string',
-            'sub_title'=>'required|string',
-            // 'big_image'=>'required|image',
-            // 'small_image'=>'required|image',
+            'title1'=>'required|string',
+            'title2'=>'required|string',
             'description'=>'required|string',
-            'client'=>'required|string',
-            'category'=>'required|string',
         ]);
 
-        $portfolios=Portfolio::find($id);
-        $portfolios->title= $request->title;
-        $portfolios->sub_title= $request->sub_title;
+        $abouts=About::find($id);
+        $abouts->title1= $request->title1;
+        $abouts->title2= $request->title2;
         // $portfolios->big_image=$request->big_image;
         // $portfolios->small_image= $request->small_image;
-        $portfolios->description= $request->description;
-        $portfolios->client= $request->client;
-        $portfolios->category= $request->category;
+        $abouts->description= $request->description;
         
-
-        if($request->file('big_image')){
-            $big_file=$request->file('big_image');
-            storage::putFile('public/img',$big_file);
-            $portfolios->big_image="storage/img/".$big_file->hashName(); 
+        if($request->file('image')){
+            $file=$request->file('image');
+            storage::putFile('public/img',$file);
+            $abouts->image="storage/img/".$file->hashName();
         }
-        if($request->file('small_image')){
-            $small_file=$request->file('small_image');
-            storage::putFile('public/img',$small_file);
-            $portfolios->small_image="storage/img/".$small_file->hashName();
 
-        }
-        $portfolios->save();
-        return redirect()->route('admin.portfolios.list')->with('success',' portfolios updated');
+        $abouts->save();
+        return redirect()->route('admin.abouts.list')->with('success','new About Updated');
     }
     
 
@@ -136,10 +124,9 @@ class AboutPagesController extends Controller
      */
     public function destroy($id)
     {
-        $portfolios=Portfolio::find($id);
-        @unlink(public_path($portfolios->big_image));// for image delete
-        @unlink(public_path($portfolios->small_image));
-        $portfolios->delete();
-        return redirect()->route('admin.portfolios.list')->with('success',' Portfolio Deleted successfully');
+        $abouts=About::find($id);
+        @unlink(public_path($abouts->image));// for image delete
+        $abouts->delete();
+        return redirect()->route('admin.abouts.list')->with('success',' About Deleted successfully');
     }
 }
