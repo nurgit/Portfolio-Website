@@ -15,8 +15,8 @@ class AboutPagesController extends Controller
      */
     public function list()
     {
-       $portfolios= Portfolio::all();
-      return view ('admin.portfolios.list',compact('portfolios'));
+       $abouts= About::all();
+      return view ('admin.abouts.list',compact('abouts'));
     }
 
     /**
@@ -78,8 +78,8 @@ class AboutPagesController extends Controller
      */
     public function edit($id)
     {
-        $portfolios=Portfolio::find($id);
-        return view('admin.portfolios.edit', compact('portfolios'));
+        $abouts=About::find($id);
+        return view('admin.abouts.edit', compact('abouts'));
     }
 
     /**
