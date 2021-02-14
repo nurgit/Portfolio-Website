@@ -10,52 +10,35 @@
                 </ol>
                 
                 
-                <form action="{{route('admin.portfolios.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('admin.abouts.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{method_field('PUT')}}
                     
-                    <div class="row">
-                        <div class="from-group col-md-3 mt-3">
-                            <h3>Big Image</h3>
-                            <img style="height: 30vh" src="" alt="" class="img-thumbnil">
-                            <input type="file" id="big_image" name="big_image" class="bc_img mt-3">
-                        </div>
-                        <div class="from-group col-md-3 mt-3">
-                            <h3>Small Image</h3>
-                            <img style="height: 20vh" src="" alt="" class="img-thumbnil">
-                            <input type="file" id="small_image" name="small_image" class="bc_img mt-3">
-                        </div>
-                        <div style=" " class="form-group col-md-4 mt-3">
-                            <div>
-                                <label for="title"><h4>Title</h4></label>
-                                <input type="text" class="form-control" name="title" class="mt-3" value="">
-                            </div>
-                            <div class="mt-4">
-                                <label for="sub_title"><h4>Sub Title</h4></label>
-                                <input type="text" class="form-control" name="sub_title" value="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">  
-                        <div class="from-group col-md-6 mt-3">
-                            <h3>Description</h3>
-                            <textarea name="description" id="" cols="" rows="6" class="form-control"></textarea>
-                        </div>  
+                    <div class="row" style="margin-left: 5%">
 
-                        <div style=" " class="form-group col-md-4 mt-3">
+                        <div style=" " class="form-group col-md-6 mt-3">
                             <div class="mb-4">
-                                <label for="client"><h4>Client</h4></label>
-                                <input type="text" class="form-control" name="client" value="">
+                                <h3>Image</h3>
+                                {{-- <img style="height: 20vh" src="" alt="" class="img-thumbnil"> --}}
+
+                                <input type="file" id="small_image" name="image" >
                             </div>
-                            <div class="mb-5">
-                                <label for="category"><h4>Category</h4></label>
-                                <input type="text" class="form-control" name="category" value="">
+                            <div class="mb-4">
+                                <label for="title"><h4>Date</h4></label>
+                                <input type="text" class="form-control" name="title1"  value="">
                             </div>
-                            
+                            <div class="mb-4">
+                                <label for="sub_title"><h4>Title</h4></label>
+                                <input type="text" class="form-control" name="title2" value="">
+                            </div>
+                            <div class="mb-4">
+                                <h3>Description</h3>
+                            <textarea name="description" id="" cols="" rows="6" class="form-control"></textarea>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <input type="submit" name="submit" class="btn btn-primary mt-5">
+                    <div style="margin-left: 5%">
+                        <input type="submit" name="submit" class="btn btn-primary mb-4 mt-3" >
                     </div>
                 </form>
                 
