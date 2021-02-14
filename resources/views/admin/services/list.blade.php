@@ -30,13 +30,15 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-sm-2">
-                                                <a href="{{route('admin.services.edit',$service->id)}}" class="btn btn-primary">Edit</a>
+                                                <a href="{{route('admin.services.edit',$service->id)}}" class="btn btn-primary p-2 m-1 mr-5">Edit</a>
+                                                
                                             </div>
+                                            <div class=""></div>
                                             <div class="col-sm-2">
                                                 <form action="{{route('admin.services.destroy',$service->id)}}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <input type="submit" name="submit" value="Delete" class="btn btn-danger">
+                                                    <input type="submit" name="submit" value="Delete" class="btn btn-danger p-2 m-1">
                                                 </form>
                                             </div>
                                         </div>

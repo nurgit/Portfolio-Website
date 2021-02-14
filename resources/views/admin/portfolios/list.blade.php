@@ -45,6 +45,7 @@
                                             <div class="">
                                                 <a href="{{route('admin.portfolios.edit',$portfolio->id)}}" class="btn btn-primary p-2 m-1">Edit</a>
                                             </div>
+                                            <hr>
                                             <div class="">
                                                 <form action="{{route('admin.portfolios.destroy',$portfolio->id)}}" method="POST">
                                                     @csrf
