@@ -57,7 +57,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                                 Services
                             </a> --}}
-                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                                 Services
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -72,7 +72,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
                                 Portfolio
                             </a> --}}
-                            <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
                                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
                                 Services
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
